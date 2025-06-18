@@ -1,0 +1,74 @@
+// scroll
+window.addEventListener('scroll', () => {
+  const navbar = document.querySelector('.navbar');
+  if (window.scrollY > 40) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
+// carossel
+document.addEventListener("DOMContentLoaded", function () {
+  const track = document.querySelector(".carousel-track");
+  const slides = Array.from(track.children);
+  const nextButton = document.querySelector(".next");
+  const prevButton = document.querySelector(".prev");
+  const dotsNav = document.querySelector(".carousel-dots");
+
+  const slidesPerView = 4;
+  const totalGroups = Math.ceil(slides.length / slidesPerView);
+  let currentGroup = 0;
+
+  const slideWidth = slides[0].getBoundingClientRect().width + 20;
+  const groupWidth = slideWidth * slidesPerView;
+
+  // Cria as estrelas
+  const dots = Array.from({ length: totalGroups }).map((_, i) => {
+    const dot = document.createElement("span");
+    dot.classList.add("dot");
+    dot.innerHTML = i === 0 ? "★" : "☆";
+    dot.addEventListener("click", () => {
+      moveToGroup(i);
+      resetAutoplay();
+    });
+    dotsNav.appendChild(dot);
+    return dot;
+  });
+
+  function updateCarousel() {
+    track.style.transform = `translateX(-${groupWidth * currentGroup}px)`;
+    dots.forEach((dot, i) => {
+      dot.innerHTML = i === currentGroup ? "★" : "☆";
+    });
+  }
+
+  function moveToGroup(index) {
+    currentGroup = (index + totalGroups) % totalGroups;
+    updateCarousel();
+  }
+
+  nextButton.addEventListener("click", () => {
+    moveToGroup(currentGroup + 1);
+    resetAutoplay();
+  });
+
+  prevButton.addEventListener("click", () => {
+    moveToGroup(currentGroup - 1);
+    resetAutoplay();
+  });
+
+  // Autoplay
+  let autoplay = setInterval(() => {
+    moveToGroup(currentGroup + 1);
+  }, 4000);
+
+  function resetAutoplay() {
+    clearInterval(autoplay);
+    autoplay = setInterval(() => {
+      moveToGroup(currentGroup + 1);
+    }, 4000);
+  }
+
+  updateCarousel();
+});
