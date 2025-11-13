@@ -28,10 +28,10 @@ body {
 }
 
 .logo img {
-    height: 120px; 
+    height: 120px;
     width: auto;
     display: block;
-    filter: drop-shadow(0 0 4px rgba(255,255,255,0.4)); 
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.4));
 }
 
 .navbar .logo a {
@@ -368,7 +368,7 @@ form.form textarea {
 }
 
 form.form button {
-    background-color: #e63946;
+    background-color: #107707;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -444,3 +444,306 @@ footer {
 }
 
 /* #endregion footer */
+
+/* #region pag contato */
+.banner-cuidados {
+  position: relative;
+  height: 90vh;
+  background: url('../img/banner-cuidados.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.banner-content {
+  z-index: 2;
+  max-width: 700px;
+  padding: 20px;
+}
+
+.banner-content h1 {
+  font-size: 3rem;
+  color: #ff6600;
+  margin-bottom: 15px;
+}
+
+.banner-content p {
+  font-size: 1.2rem;
+  color: #ddd;
+  margin-bottom: 30px;
+}
+
+.cuidados-header h2 {
+  font-size: 2.3rem;
+  color: #ff6600;
+  margin-bottom: 15px;
+}
+
+.cuidados-section {
+    padding: 120px 15%;
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.cuidados-header h1 {
+    font-size: 2.5rem;
+    color: #ff6600;
+    margin-bottom: 10px;
+}
+
+.cuidados-header p {
+    color: #ccc;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+.cuidados-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.cuidados-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 30px 20px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.cuidados-card:hover {
+    transform: translateY(-8px);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.cuidados-card i {
+    color: #ff6600;
+    margin-bottom: 15px;
+}
+
+.cuidados-card h2 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.cuidados-card p {
+    color: #ccc;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* #endregion pag contato */
+
+/* #region pag galeria */
+.galeria-banner {
+    background: url("../img/banner-galeria.jpg") center/cover no-repeat;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 80px; 
+}
+
+.galeria-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+}
+
+.galeria-banner .overlay {
+    position: relative;
+    text-align: center;
+    z-index: 1;
+}
+
+.galeria-banner p {
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+/* =================== PROFISSIONAIS =================== */
+.galeria-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.galeria-section h2 {
+    font-size: 2rem;
+    color: #ff6600;
+    margin: 50px 0 20px;
+}
+
+.profissionais {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.time {
+    background: #111;
+    border-radius: 15px;
+    overflow: hidden;
+    width: 280px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.time:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+
+.time img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+}
+
+.time h3 {
+    font-size: 1.3rem;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.time p {
+    color: #ccc;
+    padding: 0 15px 20px;
+    font-size: 0.95rem;
+}
+/* #endregion pag galeria */
+
+/* #region sobre */
+.sobre-banner {
+  background: url("../img/banner-sobre.jpg") center/cover no-repeat;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.sobre-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.sobre-banner .overlay {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+.sobre-banner h1 {
+  font-size: 3rem;
+  color: #ff6600;
+  margin-bottom: 10px;
+}
+
+.sobre-banner p {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+/* SOBRE */
+.sobre-section {
+  padding: 100px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sobre-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 60px;
+}
+
+.sobre-imagem img {
+  width: 500px;
+  max-width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5);
+}
+
+.sobre-texto {
+  flex: 1;
+  min-width: 300px;
+}
+
+.sobre-texto h2 {
+  color: #ff6600;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.sobre-texto p {
+  color: #ccc;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+/* VALORES */
+.valores {
+  background-color: #111;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.valores h2 {
+  color: #ff6600;
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.valores-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.valor-card {
+  background: #1a1a1a;
+  border-radius: 15px;
+  width: 280px;
+  padding: 30px 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.valor-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 15px rgba(255, 102, 0, 0.4);
+}
+
+.valor-card i {
+  color: #ff6600;
+  margin-bottom: 15px;
+}
+
+.valor-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.valor-card p {
+  color: #ccc;
+  font-size: 0.95rem;
+}
+/* #endregion sobre */

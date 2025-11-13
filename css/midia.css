@@ -116,6 +116,29 @@
         text-align: center;
         gap: 10px;
     }
+
+    /* pag galeria */
+    .galeria-banner h1 {
+        font-size: 2.2rem;
+    }
+
+    .time img {
+        height: 250px;
+    }
+
+    .tattoo-item img {
+        height: 250px;
+    }
+
+    /* pag nosso estudio */
+    .sobre-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sobre-imagem img {
+        width: 90%;
+    }
 }
 
 /* Telas até 480px (celulares pequenos) */
