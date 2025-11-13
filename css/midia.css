@@ -1,0 +1,198 @@
+/* ------------------------------  RESPONSIVIDADE GERAL --------------------------------*/
+
+/* Telas até 1024px (tablets e notebooks menores) */
+@media (max-width: 1024px) {
+
+    /* Navbar */
+    .nav-links {
+        gap: 20px;
+    }
+
+    .servicos-cards {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .servico-card {
+        width: 45%;
+        margin-bottom: 20px;
+    }
+
+    .studio-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .studio-image img {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .studio-text {
+        padding: 0 20px;
+    }
+
+    .form {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+/* Telas até 768px (tablets pequenos e celulares grandes) */
+@media (max-width: 768px) {
+
+    .logo img {
+        height: 155px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        background-color: #111;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .video-overlay h1 {
+        font-size: 1.8rem;
+        padding: 0 15px;
+    }
+
+    .servicos-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .servico-card {
+        width: 90%;
+    }
+
+    .carousel-slide img {
+        width: 100%;
+        height: auto;
+    }
+
+    .studio-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .studio-image img {
+        width: 100%;
+    }
+
+    .studio-text {
+        padding: 0 15px;
+    }
+
+    .form {
+        width: 90%;
+    }
+
+    .form input,
+    .form textarea {
+        font-size: 1rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+}
+
+/* Telas até 480px (celulares pequenos) */
+@media (max-width: 480px) {
+
+    .logo i {
+        font-size: 2rem;
+    }
+
+    .video-overlay h1 {
+        font-size: 1.5rem;
+    }
+
+    .servicos-titulo {
+        font-size: 1.5rem;
+    }
+
+    .card-conteudo {
+        padding: 4px;
+    }
+
+    .servico-card img {
+        height: 220px;
+    }
+
+    .servico-card {
+        width: 95%;
+    }
+
+    .servico-card h3 {
+        font-size: 1rem;
+    }
+
+    .servico-card p {
+        font-size: 0.95rem;
+    }
+
+    .servico-card button {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    .studio-text h2 {
+        font-size: 1.4rem;
+    }
+
+    .studio-text p {
+        font-size: 1rem;
+    }
+
+    .conteudo {
+        padding: 7px;
+    }
+
+    .conteudo h2 {
+        font-size: 2em;
+    }
+
+    .conteudo p {
+        font-size: 1em;
+    }
+
+    .form {
+        width: 70%;
+    }
+
+    .form input,
+    .form textarea {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    footer p {
+        font-size: 0.9rem;
+    }
+
+    .social-links a {
+        font-size: 1.5rem;
+    }
+}

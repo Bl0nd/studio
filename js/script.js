@@ -8,6 +8,21 @@ window.addEventListener('scroll', () => {
   }
 });
 
+// ====== MENU HAMBURGUER ======
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+const menuIcon = document.querySelector('.menu-toggle i');
+
+menuToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+  // Alterna o ícone entre "menu" e "x"
+  if (menuIcon.classList.contains('bx-menu')) {
+    menuIcon.classList.replace('bx-menu', 'bx-x');
+  } else {
+    menuIcon.classList.replace('bx-x', 'bx-menu');
+  }
+});
+
 // carossel
 document.addEventListener("DOMContentLoaded", function () {
   const track = document.querySelector(".carousel-track");
