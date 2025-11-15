@@ -18,7 +18,7 @@ body {
 }
 
 .navbar.scrolled {
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: #000;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
@@ -445,7 +445,7 @@ footer {
 
 /* #endregion footer */
 
-/* #region pag contato */
+/* #region pag cuidados */
 .banner-cuidados {
   position: relative;
   height: 90vh;
@@ -544,36 +544,200 @@ footer {
     font-size: 1rem;
     line-height: 1.5;
 }
+/* --- ESTILO PARA AS NOVAS SEÇÕES (Adicione ao final do seu css/midia.css) --- */
 
-/* #endregion pag contato */
+/* Seção Fases da Cicatrização */
+.fases-cicatrizacao {
+    background-color: #000000; /* Preto sólido */
+    padding: 60px 5%;
+    text-align: center;
+    color: #ffffff;
+}
 
-/* #region pag galeria */
-.galeria-banner {
-    background: url("../img/banner-galeria.jpg") center/cover no-repeat;
-    height: 60vh;
+.fases-cicatrizacao h2 {
+    font-size: 2.2em;
+    color: #ff6600;
+    margin-bottom: 10px;
+}
+
+.fases-cicatrizacao .subtitulo-fase {
+    font-size: 1.1em;
+    color: #aaaaaa;
+    margin-bottom: 40px;
+}
+
+.fase-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.fase-card {
+    width: 300px;
+    padding: 25px;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    text-align: left;
+    transition: box-shadow 0.3s ease;
+}
+
+.fase-card:hover {
+    box-shadow: 0 0 10px #ff6600;
+}
+
+.fase-card i {
+    color: #ff6600;
+    margin-bottom: 10px;
+}
+
+.fase-card h3 {
+    font-size: 1.3em;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.fase-card p {
+    font-size: 0.95em;
+    color: #cccccc;
+}
+
+/* Seção Cuidados com Piercings */
+.piercing-cuidados {
+    background-color: #0a0a0a;
+    padding: 80px 5%;
+    color: #ffffff;
+    text-align: center;
+}
+
+.piercing-cuidados h2 {
+    font-size: 2.2em;
+    color: #ff6600;
+    margin-bottom: 10px;
+}
+
+.piercing-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    margin-top: 80px; 
+    gap: 50px;
+    max-width: 1200px;
+    margin: 40px auto 0;
+    text-align: left;
+    flex-wrap: wrap;
 }
 
-.galeria-banner::before {
-    content: "";
+.piercing-topicos {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+}
+
+.piercing-topicos ul {
+    list-style: none;
+    padding: 0;
+}
+
+.piercing-topicos ul li {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.piercing-topicos ul li i {
+    color: #ff6600;
+    margin-right: 10px;
+    font-size: 1.3em;
+    vertical-align: middle;
+}
+
+.piercing-imagem {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+}
+
+.piercing-imagem img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(255, 102, 0, 0.4);
+}
+/* #endregion pag cuidados */
+
+/* #region sobre */
+.sobre-banner {
+    background-image: url('../img/banner-sobre.jpg'); 
+    background-size: cover;
+    background-position: center center; 
+    height: 60vh; 
+    width: 100%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    color: #ffffff;
+    position: relative;
+    margin-top: -90px; 
+}
+
+.sobre-banner .overlay {
+    background: rgba(0, 0, 0, 0.4); 
     position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.65);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
-.galeria-banner .overlay {
-    position: relative;
-    text-align: center;
-    z-index: 1;
+.sobre-banner h1 {
+  font-size: 3rem;
+  color: #ff6600;
+  margin-bottom: 10px;
 }
 
-.galeria-banner p {
-    font-size: 1.2rem;
-    color: #fff;
+.sobre-banner p {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+/* SOBRE */
+.sobre-section {
+  padding: 100px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sobre-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 60px;
+}
+
+.sobre-imagem img {
+  width: 500px;
+  max-width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5);
+}
+
+.sobre-texto {
+  flex: 1;
+  min-width: 300px;
+}
+
+.sobre-texto h2 {
+  color: #ff6600;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.sobre-texto p {
+  color: #000000;
+  line-height: 1.8;
+  margin-bottom: 15px;
 }
 
 /* =================== PROFISSIONAIS =================== */
@@ -624,79 +788,6 @@ footer {
     color: #ccc;
     padding: 0 15px 20px;
     font-size: 0.95rem;
-}
-/* #endregion pag galeria */
-
-/* #region sobre */
-.sobre-banner {
-  background: url("../img/banner-sobre.jpg") center/cover no-repeat;
-  height: 60vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.sobre-banner::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-}
-
-.sobre-banner .overlay {
-  position: relative;
-  text-align: center;
-  z-index: 1;
-}
-
-.sobre-banner h1 {
-  font-size: 3rem;
-  color: #ff6600;
-  margin-bottom: 10px;
-}
-
-.sobre-banner p {
-  font-size: 1.2rem;
-  color: #fff;
-}
-
-/* SOBRE */
-.sobre-section {
-  padding: 100px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.sobre-container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 60px;
-}
-
-.sobre-imagem img {
-  width: 500px;
-  max-width: 100%;
-  border-radius: 20px;
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5);
-}
-
-.sobre-texto {
-  flex: 1;
-  min-width: 300px;
-}
-
-.sobre-texto h2 {
-  color: #ff6600;
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-.sobre-texto p {
-  color: #000000;
-  line-height: 1.8;
-  margin-bottom: 15px;
 }
 
 /* VALORES */

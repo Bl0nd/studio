@@ -12,16 +12,20 @@
 </head>
 
 <body>
-
     <header>
         <nav class="navbar">
             <div class="logo">
                 <img src="img/logo2.png" alt="Logo do Estúdio">
             </div>
+
+            <!-- Ícone do menu hamburguer -->
+            <div class="menu-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+
             <ul class="nav-links">
                 <li><a href="index.html">Início</a></li>
-                <li><a href="galeria.html">Galeria</a></li>
-                <li><a href="sobre.html" class="active">Nosso Estúdio</a></li>
+                <li><a href="sobre.html">Sobre Nós</a></li>
                 <li><a href="cuidados.html">Cuidados</a></li>
             </ul>
         </nav>
@@ -30,8 +34,6 @@
     <!-- Banner -->
     <section class="sobre-banner">
         <div class="overlay">
-            <h1>Nosso Estúdio</h1>
-            <p>Arte, segurança e expressão em cada traço.</p>
         </div>
     </section>
 
@@ -68,6 +70,50 @@
         </div>
     </section>
 
+    <!-- Seção de Profissionais -->
+    <section class="galeria-section">
+        <h2>Tatuadores</h2>
+        <div class="profissionais">
+            <div class="time">
+                <img src="img/tatuador1.jpg" alt="Juliana Souza">
+                <h3>Juliana Souza</h3>
+                <p>Realismo Preto e Cinza. Mestre em criar profundidade e detalhes, dá vida a retratos, dark art e composições sombrias com precisão inigualável, prezando pela fidelidade fotográfica</p>
+            </div>
+
+            <div class="time">
+                <img src="img/tatuador2.jpg" alt="Gabriel Lima">
+                <h3>Gabriel Lima</h3>
+                <p>Blackwork e Old School. Com domínio do preenchimento sólido e traços fortes, Gabriel é especialista em Blackwork e nas linhas clássicas do Old School (âncoras, caveiras e pin-ups)</p>
+            </div>
+
+            <div class="time">
+                <img src="img/tatuador3.jpg" alt="Lara Martins">
+                <h3>Lara Martins</h3>
+                <p>Fine Line, Aquarela e Florais. Especialista em artes delicadas, fluidez da Aquarela e nas composições de Fine Line (linhas finas), ideal para frases, minimalismo e florais orgânicos</p>
+            </div>
+        </div>
+
+        <h2>Body Piercers</h2>
+        <div class="profissionais">
+            <div class="time">
+                <img src="img/piercer1.jpg" alt="Rafael Mendes">
+                <h3>Rafael Mendes</h3>
+                <p>Perfurações Avançadas e Industrial. Focado em segurança e anatomia, realiza perfurações complexas como Industrial e Bridge e é referência em curadoria de joias de Titânio</p>
+            </div>
+
+            <div class="time">
+                <img src="img/piercer2.jpg" alt="Beatriz Rocha">
+                <h3>Beatriz Rocha</h3>
+                <p>Microdermal e Composição de Orelha. Especialista em adornos sutis, Beatriz é procurada para Microdermals e para a criação de "Constelações" (Helix, Tragus, Daith) de piercings delicados</p>
+            </div>
+
+            <div class="time">
+                <img src="img/piercer3.jpg" alt="Kaique Almeida">
+                <h3>Kaique Almeida</h3>
+                <p>Septo e Lábios (Labret/Medusa). Domina as perfurações faciais que exigem precisão, como Septo e Lábios (Labret e Medusa), garantindo técnica segura e estilo autêntico</p>
+            </div>
+        </div>
+    </section>
     <!-- Valores -->
     <section class="valores">
         <h2>Nossos Valores</h2>
@@ -101,6 +147,8 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
