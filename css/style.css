@@ -447,47 +447,59 @@ footer {
 
 /* #region pag cuidados */
 .banner-cuidados {
-  position: relative;
-  height: 90vh;
-  background: url('../img/banner-cuidados.jpg') center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+    margin-top: -90px;
 }
 
-.banner-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #fff;
+.video-fundo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 1;
 }
 
-.banner-content {
-  z-index: 2;
-  max-width: 700px;
-  padding: 20px;
+.cuidados {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
-.banner-content h1 {
-  font-size: 3rem;
-  color: #ff6600;
-  margin-bottom: 15px;
+.cuidados .arte {
+    max-width: 800px;
+    padding-top: 90px;
 }
 
-.banner-content p {
-  font-size: 1.2rem;
-  color: #ddd;
-  margin-bottom: 30px;
+.cuidados .arte h2 {
+    font-size: 2em;
+    color: #ff6600;
+    margin-bottom: 10px;
+}
+
+.cuidados .arte p {
+    font-size: 1em;
+    color: #ffffff;
+    font-weight: 300;
 }
 
 .cuidados-header h2 {
-  font-size: 2.3rem;
-  color: #ff6600;
-  margin-bottom: 15px;
+    font-size: 2.3rem;
+    color: #ff6600;
+    margin-bottom: 15px;
 }
 
 .cuidados-section {
@@ -495,7 +507,7 @@ footer {
     background-color: #111;
     color: #fff;
     text-align: center;
-    min-height: 100vh;
+    min-height: 70vh;
 }
 
 .cuidados-header h1 {
@@ -544,11 +556,11 @@ footer {
     font-size: 1rem;
     line-height: 1.5;
 }
-/* --- ESTILO PARA AS NOVAS SEÇÕES (Adicione ao final do seu css/midia.css) --- */
 
 /* Seção Fases da Cicatrização */
+/* --- CONFIGURAÇÃO GERAL DA SEÇÃO (Manter) --- */
 .fases-cicatrizacao {
-    background-color: #000000; /* Preto sólido */
+    background-color: #000000;
     padding: 60px 5%;
     text-align: center;
     color: #ffffff;
@@ -569,7 +581,7 @@ footer {
 .fase-container {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 80px;
     flex-wrap: wrap;
     max-width: 1200px;
     margin: 0 auto;
@@ -577,34 +589,68 @@ footer {
 
 .fase-card {
     width: 300px;
-    padding: 25px;
+    height: 250px;
+    perspective: 1000px;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.fase-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.fase-card:hover .fase-inner {
+    transform: rotateY(180deg);
+}
+
+.frente,
+.verso {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.frente {
     background-color: #1a1a1a;
-    border-radius: 8px;
-    text-align: left;
-    transition: box-shadow 0.3s ease;
+    border: 2px solid #333333;
 }
 
-.fase-card:hover {
-    box-shadow: 0 0 10px #ff6600;
-}
-
-.fase-card i {
+.frente i {
     color: #ff6600;
     margin-bottom: 10px;
 }
 
-.fase-card h3 {
+.frente h3 {
     font-size: 1.3em;
     color: #ffffff;
-    margin-bottom: 10px;
+    margin-bottom: 0;
 }
 
-.fase-card p {
+.verso {
+    background-color: #ff6600;
+    color: #000000;
+    transform: rotateY(180deg);
+}
+
+.verso p {
     font-size: 0.95em;
-    color: #cccccc;
+    color: #000000;
+    line-height: 1.4;
+    padding: 0;
 }
-
-/* Seção Cuidados com Piercings */
+/* Cuidados */
 .piercing-cuidados {
     background-color: #0a0a0a;
     padding: 80px 5%;
@@ -651,39 +697,45 @@ footer {
     margin-right: 10px;
     font-size: 1.3em;
     vertical-align: middle;
+    animation-name: balanco;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
 }
 
-.piercing-imagem {
-    flex: 1;
-    min-width: 300px;
-    max-width: 400px;
+@keyframes balanco {
+    0% {
+        transform: rotate(-20deg);
+    }
+
+    50% {
+        transform: rotate(20deg);
+    }
+
+    100% {
+        transform: rotate(-20deg);
+    }
 }
 
-.piercing-imagem img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(255, 102, 0, 0.4);
-}
 /* #endregion pag cuidados */
 
 /* #region sobre */
 .sobre-banner {
-    background-image: url('../img/banner-sobre.jpg'); 
+    background-image: url('../img/banner-sobre.jpg');
     background-size: cover;
-    background-position: center center; 
-    height: 60vh; 
-    width: 100%; 
-    display: flex; 
-    align-items: center; 
+    background-position: center center;
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
     justify-content: center;
     color: #ffffff;
     position: relative;
-    margin-top: -90px; 
+    margin-top: -90px;
 }
 
 .sobre-banner .overlay {
-    background: rgba(0, 0, 0, 0.4); 
+    background: rgba(0, 0, 0, 0.4);
     position: absolute;
     top: 0;
     left: 0;
@@ -692,52 +744,52 @@ footer {
 }
 
 .sobre-banner h1 {
-  font-size: 3rem;
-  color: #ff6600;
-  margin-bottom: 10px;
+    font-size: 3rem;
+    color: #ff6600;
+    margin-bottom: 10px;
 }
 
 .sobre-banner p {
-  font-size: 1.2rem;
-  color: #fff;
+    font-size: 1.2rem;
+    color: #fff;
 }
 
 /* SOBRE */
 .sobre-section {
-  padding: 100px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+    padding: 100px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .sobre-container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 60px;
 }
 
 .sobre-imagem img {
-  width: 500px;
-  max-width: 100%;
-  border-radius: 20px;
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5);
+    width: 500px;
+    max-width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5);
 }
 
 .sobre-texto {
-  flex: 1;
-  min-width: 300px;
+    flex: 1;
+    min-width: 300px;
 }
 
 .sobre-texto h2 {
-  color: #ff6600;
-  font-size: 2rem;
-  margin-bottom: 20px;
+    color: #ff6600;
+    font-size: 2rem;
+    margin-bottom: 20px;
 }
 
 .sobre-texto p {
-  color: #000000;
-  line-height: 1.8;
-  margin-bottom: 15px;
+    color: #000000;
+    line-height: 1.8;
+    margin-bottom: 15px;
 }
 
 /* =================== PROFISSIONAIS =================== */
@@ -792,49 +844,50 @@ footer {
 
 /* VALORES */
 .valores {
-  background-color: #111;
-  text-align: center;
-  padding: 80px 20px;
+    background-color: #111;
+    text-align: center;
+    padding: 80px 20px;
 }
 
 .valores h2 {
-  color: #ff6600;
-  font-size: 2rem;
-  margin-bottom: 40px;
+    color: #ff6600;
+    font-size: 2rem;
+    margin-bottom: 40px;
 }
 
 .valores-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
 }
 
 .valor-card {
-  background: #1a1a1a;
-  border-radius: 15px;
-  width: 280px;
-  padding: 30px 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #1a1a1a;
+    border-radius: 15px;
+    width: 280px;
+    padding: 30px 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .valor-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0 15px rgba(255, 102, 0, 0.4);
+    transform: translateY(-8px);
+    box-shadow: 0 0 15px rgba(255, 102, 0, 0.4);
 }
 
 .valor-card i {
-  color: #ff6600;
-  margin-bottom: 15px;
+    color: #ff6600;
+    margin-bottom: 15px;
 }
 
 .valor-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
 }
 
 .valor-card p {
-  color: #ccc;
-  font-size: 0.95rem;
+    color: #ccc;
+    font-size: 0.95rem;
 }
+
 /* #endregion sobre */
