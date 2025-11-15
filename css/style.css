@@ -539,11 +539,34 @@ footer {
 .cuidados-card:hover {
     transform: translateY(-8px);
     background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid #ff6600;
+    box-shadow:
+        inset 0 0 5px rgba(255, 255, 0, 0.7),
+        0 8px 15px rgba(255, 102, 0, 0.3);
 }
 
 .cuidados-card i {
     color: #ff6600;
     margin-bottom: 15px;
+    
+    animation-name: pulso;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes pulso {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 .cuidados-card h2 {
@@ -558,7 +581,6 @@ footer {
 }
 
 /* Seção Fases da Cicatrização */
-/* --- CONFIGURAÇÃO GERAL DA SEÇÃO (Manter) --- */
 .fases-cicatrizacao {
     background-color: #000000;
     padding: 60px 5%;
@@ -650,6 +672,7 @@ footer {
     line-height: 1.4;
     padding: 0;
 }
+
 /* Cuidados */
 .piercing-cuidados {
     background-color: #0a0a0a;
@@ -872,7 +895,7 @@ footer {
 
 .valor-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 0 15px rgba(255, 102, 0, 0.4);
+    box-shadow: 0 0 40px rgba(255, 102, 0, 0.4);
 }
 
 .valor-card i {
