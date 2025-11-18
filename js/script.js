@@ -35,21 +35,26 @@ document.addEventListener("DOMContentLoaded", function () {
   const totalGroups = Math.ceil(slides.length / slidesPerView);
   let currentGroup = 0;
 
-  const slideWidth = slides[0].getBoundingClientRect().width + 20;
+  // Garante que o slideWidth seja calculado corretamente após o DOM carregar
+  // (Verifique se slides[0] existe)
+  if (slides.length === 0) return;
+
+  const slideWidth = slides[0].getBoundingClientRect().width + 20; // 20px de margem/gap
   const groupWidth = slideWidth * slidesPerView;
 
-  // Cria as estrelas
-  const dots = Array.from({ length: totalGroups }).map((_, i) => {
-    const dot = document.createElement("span");
-    dot.classList.add("dot");
-    dot.innerHTML = i === 0 ? "★" : "☆";
-    dot.addEventListener("click", () => {
-      moveToGroup(i);
-      resetAutoplay();
-    });
-    dotsNav.appendChild(dot);
-    return dot;
-  });
+  const autoplayIntervalTime = 5000; // 5 segundos
+  let autoplayTimer;
+
+  function startAutoplay() {
+    autoplayTimer = setInterval(() => {
+      moveToGroup(currentGroup + 1);
+    }, autoplayIntervalTime);
+  }
+
+  function resetAutoplay() {
+    clearInterval(autoplayTimer);
+    startAutoplay();
+  }
 
   function updateCarousel() {
     track.style.transform = `translateX(-${groupWidth * currentGroup}px)`;
@@ -63,6 +68,19 @@ document.addEventListener("DOMContentLoaded", function () {
     updateCarousel();
   }
 
+  // Cria as estrelas (Dots)
+  const dots = Array.from({ length: totalGroups }).map((_, i) => {
+    const dot = document.createElement("span");
+    dot.classList.add("dot");
+    dot.innerHTML = i === 0 ? "★" : "☆";
+    dot.addEventListener("click", () => {
+      moveToGroup(i);
+      resetAutoplay();
+    });
+    dotsNav.appendChild(dot);
+    return dot;
+  });
+
   nextButton.addEventListener("click", () => {
     moveToGroup(currentGroup + 1);
     resetAutoplay();
@@ -73,17 +91,8 @@ document.addEventListener("DOMContentLoaded", function () {
     resetAutoplay();
   });
 
-  // Autoplay
-  let autoplay = setInterval(() => {
-    moveToGroup(currentGroup + 1);
-  }, 4000);
 
-  function resetAutoplay() {
-    clearInterval(autoplay);
-    autoplay = setInterval(() => {
-      moveToGroup(currentGroup + 1);
-    }, 4000);
-  }
+  startAutoplay();
 
   updateCarousel();
 });
