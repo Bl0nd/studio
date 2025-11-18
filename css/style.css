@@ -401,6 +401,11 @@ footer {
     color: white;
 }
 
+.footer-content a {
+    text-decoration: none;
+    color: #fff;
+}
+
 .footer-content .social-links a {
     margin: 0 10px;
     color: white;
@@ -526,7 +531,7 @@ footer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    max-width: 1200px; 
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -550,7 +555,7 @@ footer {
 .cuidados-card i {
     color: #ff6600;
     margin-bottom: 15px;
-    
+
     animation-name: pulso;
     animation-duration: 2s;
     animation-iteration-count: infinite;
