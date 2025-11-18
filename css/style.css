@@ -524,8 +524,10 @@ footer {
 
 .cuidados-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+    max-width: 1200px; 
+    margin: 0 auto;
 }
 
 .cuidados-card {
@@ -580,7 +582,7 @@ footer {
     line-height: 1.5;
 }
 
-/* Seção Fases da Cicatrização */
+/* Fases da Cicatrização */
 .fases-cicatrizacao {
     background-color: #000000;
     padding: 60px 5%;
@@ -746,7 +748,7 @@ footer {
 .sobre-banner {
     background-image: url('../img/banner-sobre.jpg');
     background-size: cover;
-    background-position: center center;
+    background-position: center;
     height: 60vh;
     width: 100%;
     display: flex;
